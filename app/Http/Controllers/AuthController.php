@@ -5,17 +5,23 @@ namespace App\Http\Controllers;
 use App\Models\FarmerModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
 {
     public function SignIn(Request $request){
-        $Farmer = FarmerModel::where('NIC','=',$request->input('NIC'))->get()->first();
-        $isPasswordValid = Hash::check($request->input('Password'),$Farmer->PasswordHash);
+        try {
+            $Farmer = FarmerModel::where('NIC','=',$request->input('NIC'))->get()->first();
+            $isPasswordValid = Hash::check($request->input('Password'),$Farmer->PasswordHash);
 
-        if ($isPasswordValid){
-            return redirect()->route('Home');
-        } else {
-            return redirect()->route('SignIn');
+            if ($isPasswordValid){
+                Session::put('Logged',true);
+                return view('SignIn')->with(['error'=>false]);
+            } else {
+                return view('SignIn')->with(['error'=>true]);
+            }
+        } catch (\Exception $e){
+            return view('SignIn')->with(['error'=>true]);
         }
     }
 

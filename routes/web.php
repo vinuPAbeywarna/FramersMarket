@@ -14,22 +14,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/Home', function (){
-    return view('Home');
-})->name('Home');
-Route::post('/Home',[AuthController::class,'Home']);
-
+//Auth
 Route::get('/signup', function () {
-    return view('registration');
+    return view('SignUp');
 })->name('signup');
+
 Route::post('/signup', [AuthController::class,'SignUp']);
 
 Route::get('/signin', function () {
-    return view('signin');
+    return view('SignIn')->with(['error'=>false]);
 })->name('SignIn');
+
 Route::post('/signin', [AuthController::class,'SignIn']);
 
-Route::get('/Details', function (){
-    return view('Details');
-})->name('Details');
-Route::post('/Details',[AuthController::class,'Details']);
+//Profile
