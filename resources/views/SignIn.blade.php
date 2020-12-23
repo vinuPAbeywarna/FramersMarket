@@ -32,7 +32,7 @@
                                         @csrf
                                         <div class="form-group"><input class="form-control form-control-user" type="text" id="exampleInputEmail-1" aria-describedby="emailHelp" placeholder="Enter NIC..." name="NIC" required=""></div>
                                         <div class="form-group"><input class="form-control form-control-user" type="password" id="exampleInputPassword-1" placeholder="Password..." name="Password" required=""></div><button class="btn btn-primary btn-block text-white btn-user" type="submit">SignIn</button>
-                                        <hr><button class="btn btn-danger btn-block text-white btn-user" type="submit">SignUp</button>
+                                        <hr><a href="/signup"><button class="btn btn-danger btn-block text-white btn-user" type="button">SignUp</button><a/>
                                     </form>
                                 </div>
                             </div>

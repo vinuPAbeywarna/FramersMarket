@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +29,10 @@ Route::get('/signin', function () {
 Route::post('/signin', [AuthController::class,'SignIn']);
 
 //Profile
+Route::get('/profile', function () {
+    if (Session::get('Logged')){
+        return view('Profile');
+    } else {
+        return redirect()->route('SignIn');
+    }
+})->name('Profile');

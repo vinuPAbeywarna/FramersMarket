@@ -16,11 +16,13 @@ class AuthController extends Controller
 
             if ($isPasswordValid){
                 Session::put('Logged',true);
-                return view('SignIn')->with(['error'=>false]);
+                Session::put('NIC',$Farmer->NIC);
+                return redirect()->route('Profile');
             } else {
                 return view('SignIn')->with(['error'=>true]);
             }
         } catch (\Exception $e){
+            //return response($e);
             return view('SignIn')->with(['error'=>true]);
         }
     }

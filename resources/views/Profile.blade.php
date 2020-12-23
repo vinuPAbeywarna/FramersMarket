@@ -5,11 +5,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Profile - FarmersMarket</title>
-    <link rel="stylesheet" href="../../public/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../../public/assets/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="/assets/fonts/fontawesome5-overrides.min.css">
 </head>
 
 <body id="page-top">
@@ -22,7 +22,7 @@
                 <hr class="sidebar-divider my-0">
                 <ul class="nav navbar-nav text-light" id="accordionSidebar">
                     <li class="nav-item"></li>
-                    <li class="nav-item"><a class="nav-link active" href="profile.html"><i class="fas fa-user"></i><span>Profile</span></a></li>
+                    <li class="nav-item"><a class="nav-link active" href="resources/views/Profile.blade.php"><i class="fas fa-user"></i><span>Profile</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="submitreport.html"><i class="fas fa-table"></i><span>Submit Reports</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="SignIn.blade.php"><i class="fa fa-map"></i><span>View on Map</span></a></li>
                     <li class="nav-item"></li>
@@ -134,7 +134,7 @@
                     <div class="row mb-3">
                         <div class="col-lg-4">
                             <div class="card mb-3">
-                                <div class="card-body text-center shadow"><img class="rounded-circle mb-3 mt-4" src="../../public/assets/img/dogs/defaultPP.png" width="160" height="160">
+                                <div class="card-body text-center shadow"><img class="rounded-circle mb-3 mt-4" src="/assets/img/dogs/defaultPP.png" width="160" height="160">
                                     <div class="mb-3"><button class="btn btn-primary btn-sm" type="button">Change Photo</button></div>
                                 </div>
                             </div>
@@ -177,24 +177,27 @@
                                             <p class="text-primary m-0 font-weight-bold">User Settings</p>
                                         </div>
                                         <div class="card-body">
+                                            @php
+                                                $User = App\Models\FarmerModel::where('NIC','=',\Illuminate\Support\Facades\Session::get('NIC'))->get()->first();
+                                            @endphp
                                             <form method="post">
                                                 <div class="form-row">
                                                     <div class="col">
-                                                        <div class="form-group"><label for="username"><strong>Full</strong>&nbsp;Name</label><input class="form-control" type="text" name="Name"></div>
+                                                        <div class="form-group"><label for="username"><strong>Full</strong>&nbsp;Name</label><input class="form-control" type="text" value="{{$User->Name}}" name="Name"></div>
                                                     </div>
                                                     <div class="col">
-                                                        <div class="form-group"><label for="email"><strong>NIC</strong></label><input class="form-control" type="email" name="NIC"></div>
+                                                        <div class="form-group"><label for="email"><strong>NIC</strong></label><input class="form-control" type="text" value="{{$User->NIC}}" name="NIC"></div>
                                                     </div>
                                                 </div>
                                                 <div class="form-row">
                                                     <div class="col">
-                                                        <div class="form-group"><label for="first_name"><strong>Phone</strong></label><input class="form-control" type="text" name="Phone"></div>
+                                                        <div class="form-group"><label for="first_name"><strong>Phone</strong></label><input class="form-control" type="text" value="{{$User->Phone}}" name="Phone"></div>
                                                     </div>
                                                     <div class="col">
-                                                        <div class="form-group"><label for="last_name"><strong>Email</strong><br></label><input class="form-control" type="text" name="Email"></div>
+                                                        <div class="form-group"><label for="last_name"><strong>Email</strong><br></label><input class="form-control" type="text" value="{{$User->Email}}" name="Email"></div>
                                                     </div>
                                                 </div>
-                                                <div class="form-group"><label for="first_name"><strong>Address</strong></label><input class="form-control" type="text" name="Address"></div>
+                                                <div class="form-group"><label for="first_name"><strong>Address</strong></label><input class="form-control" type="text" value="{{$User->Address}}" name="Address"></div>
                                                 <div class="form-group"><button class="btn btn-primary btn-sm" type="submit">Save Settings</button></div>
                                             </form>
                                         </div>
@@ -241,7 +244,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
-    <script src="../../public/assets/js/script.min.js"></script>
+    <script src="/assets/js/script.min.js"></script>
 </body>
 
 </html>
