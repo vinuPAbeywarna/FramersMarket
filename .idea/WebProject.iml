@@ -119,5 +119,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="baguettebox.js" level="application" />
+    <orderEntry type="library" name="location-picker" level="application" />
   </component>
 </module>

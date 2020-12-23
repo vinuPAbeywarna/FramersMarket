@@ -41,6 +41,10 @@ class AuthController extends Controller
         return redirect()->route('SignIn');
     }
 
+    public function Submitreport(Request $request){
+        return view('Submitreport');
+    }
+
 
 }
 

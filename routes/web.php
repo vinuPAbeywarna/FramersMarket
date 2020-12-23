@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ReportController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
 
@@ -36,3 +37,15 @@ Route::get('/profile', function () {
         return redirect()->route('SignIn');
     }
 })->name('Profile');
+
+//Report Submit
+
+Route::get('/submitreport', function () {
+    return view('Submitreport');
+})->name('Submitreport');
+
+Route::post('/submitreport', [ReportController::class,'AddReport']);
+
+
+
+
