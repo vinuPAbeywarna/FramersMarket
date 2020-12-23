@@ -29,6 +29,18 @@ class ReportController extends Controller
 
         $Reports = ReportModel::get();
 
+        $Waste = 0;
+        $Amount = 0;
+
+        foreach($Reports as $rp){
+            $Waste = $Waste + $rp->WAmount;
+            $Amount = $Amount + $rp->Amount;
+        }
+
+        $Wastage = [
+            $Waste,$Amount
+        ];
+
         $HarvestGraph = [
             ReportModel::where('HarvestType','=','Vegetables')->count(),
             ReportModel::where('HarvestType','=','Fruits')->count(),
@@ -40,7 +52,7 @@ class ReportController extends Controller
 
         if (Session::get('Logged')){
             //return response($HarvestGraph,200);
-            return view('Graphs')->with(['HarvestGraph'=>$HarvestGraph]);
+            return view('Graphs')->with(['HarvestGraph'=>$HarvestGraph, 'Wastage'=>$Wastage]);
         } else {
             return redirect()->route('SignIn');
         }

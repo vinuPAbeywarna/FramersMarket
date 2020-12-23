@@ -17,30 +17,20 @@
 <body id="page-top">
 <div id="wrapper">
     @include('SideBar.SideBar')
-    <div class="d-flex flex-column" id="content-wrapper">
-        <div id="content">
-            <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
-                <div class="container-fluid">
-                    <button class="btn btn-link d-md-none rounded-circle mr-3" id="sidebarToggleTop" type="button"><i
-                            class="fas fa-bars"></i></button>
-                    <form
-                        class="form-inline d-none d-sm-inline-block mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <div class="input-group"><input class="bg-light form-control border-0 small" type="text"
-                                                        placeholder="Search for ...">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+    <div class="" id="content">
+            <div class="row"  style="margin-top: 32px;margin-left: 8px">
+                <div class="col">
+                    <h3 class="text-dark mb-1">Types of Harvest</h3>
+                    <div class="chart-area">
+                        <canvas id="harvestChart" width="512px" height="256px"></canvas>
+                    </div>
                 </div>
-            </nav>
-            <div class="container-fluid">
-                <h3 class="text-dark mb-1">Types of Harvest</h3>
-                <div class="chart-area">
-                    <canvas id="harvestChart" width="400px" height="128px"></canvas>
+                <div class="col">
+                    <h3 class="text-dark mb-1">Wastage (kg)</h3>
+                    <div class="chart-area">
+                        <canvas id="wasteChart" width="512px" height="256px"></canvas>
+                    </div>
                 </div>
-            </div>
         </div>
     </div>
     <a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
@@ -49,6 +39,7 @@
 
 <script>
     let ctx = document.getElementById('harvestChart');
+    let ctx2 = document.getElementById('wasteChart');
     let myChart = new Chart(ctx, {
         type: 'pie',
         data: {
@@ -63,13 +54,25 @@
                     'rgba(255, 206, 86, 1)',
 
                 ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
+                borderColor: 'rgba(255, 255, 255, 1)',
+                borderWidth: 2
+            }]
+        },
+    });
+    let myChart2 = new Chart(ctx2, {
+        type: 'pie',
+        data: {
+            labels: ['Waste (kg)', 'Useful (kg)'],
+            datasets: [{
+                label: '# of Reports',
+                data: [{{$Wastage[0]}}, {{$Wastage[1]}}],
+                backgroundColor: [
                     'rgba(54, 162, 235, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 206, 86, 1)',
+                    'rgba(50, 168, 82, 1)',
+
                 ],
-                borderWidth: 1
+                borderColor: 'rgba(255, 255, 255, 1)',
+                borderWidth: 2
             }]
         },
     });
