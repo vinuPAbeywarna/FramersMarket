@@ -24,4 +24,25 @@ class ReportController extends Controller
             return response($e,200);
         }
     }
+
+    public function showGraphs(){
+
+        $Reports = ReportModel::get();
+
+        $HarvestGraph = [
+            ReportModel::where('HarvestType','=','Vegetables')->count(),
+            ReportModel::where('HarvestType','=','Fruits')->count(),
+            ReportModel::where('HarvestType','=','Nuts')->count(),
+            ReportModel::where('HarvestType','=','Grain')->count(),
+        ];
+
+        
+
+        if (Session::get('Logged')){
+            //return response($HarvestGraph,200);
+            return view('Graphs')->with(['HarvestGraph'=>$HarvestGraph]);
+        } else {
+            return redirect()->route('SignIn');
+        }
+    }
 }

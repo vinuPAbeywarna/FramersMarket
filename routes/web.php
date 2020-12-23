@@ -41,11 +41,16 @@ Route::get('/profile', function () {
 //Report Submit
 
 Route::get('/submitreport', function () {
-    return view('Submitreport');
+    if (Session::get('Logged')){
+        return view('Submitreport');
+    } else {
+        return redirect()->route('SignIn');
+    }
+
 })->name('Submitreport');
 
 Route::post('/submitreport', [ReportController::class,'AddReport']);
 
 
-
+Route::get('/graphs',[ReportController::class,'showGraphs'])->name('Graphs');
 

@@ -106,17 +106,23 @@
                                         <table class="table">
                                             <thead>
                                                 <tr>
-                                                    <th>Report Name / Date</th>
+                                                    <th>Report Type / Date</th>
                                                     <th>Actions</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td>Cell 1</td>
-                                                    <td>
-                                                        <div class="btn-group btn-group-sm" role="group"><button class="btn btn-primary" type="button">Edit</button><button class="btn btn-danger" type="button">Delete</button></div>
-                                                    </td>
-                                                </tr>
+                                            @php
+
+                                            $Reports = \App\Models\ReportModel::where('FarmerNIC','=', \Illuminate\Support\Facades\Session::get('NIC'))->get();
+                                            @endphp
+                                                @foreach($Reports as $Report)
+                                                    <tr>
+                                                        <td>{{$Report->HarvestType}} | {{$Report->updated_at}}</td>
+                                                        <td>
+                                                            <div class="btn-group btn-group-sm" role="group"><button class="btn btn-primary" type="button">Edit</button><button class="btn btn-danger" type="button">Delete</button></div>
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
                                             </tbody>
                                         </table>
                                     </div>
