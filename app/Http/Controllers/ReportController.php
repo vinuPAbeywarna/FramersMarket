@@ -36,7 +36,7 @@ class ReportController extends Controller
             ReportModel::where('HarvestType','=','Grain')->count(),
         ];
 
-        
+
 
         if (Session::get('Logged')){
             //return response($HarvestGraph,200);
