@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFarmerModelsTable extends Migration
+class CreateUserModelsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateFarmerModelsTable extends Migration
      */
     public function up()
     {
-        Schema::create('farmer_models', function (Blueprint $table) {
+        Schema::create('user_models', function (Blueprint $table) {
             $table->id();
             $table->string('Name');
             $table->string('NIC')->unique();
@@ -22,6 +22,7 @@ class CreateFarmerModelsTable extends Migration
             $table->string('Phone')->unique();
             $table->string('Email')->nullable();
             $table->string('Photo')->nullable();
+            $table->enum('UserType',['Farmer','KeelsStaff','DOA','Admin'])->default('Farmer');
             $table->timestamps();
         });
     }
@@ -33,6 +34,6 @@ class CreateFarmerModelsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('farmer_models');
+        Schema::dropIfExists('user_models');
     }
 }
