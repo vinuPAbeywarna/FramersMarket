@@ -17,7 +17,7 @@ class ReportController extends Controller
             $newReport->WAmount = $request->input('WAmount');
             $newReport->Lat = $request->input('Lat');
             $newReport->Lang = $request->input('Lang');
-            $newReport->Description = $request->input('Lang');
+            $newReport->Description = $request->input('Description');
             $newReport->save();
             return view('Submitreport');
         } catch (\Exception $e){

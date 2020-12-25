@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\PhotoUploadController;
 use App\Http\Controllers\ReportController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
@@ -49,8 +50,21 @@ Route::get('/submitreport', function () {
 
 })->name('Submitreport');
 
+//Photo Upload
+Route::post('/photoUpload', [PhotoUploadController::class,'Upload'])->name('PhotoUpload');
+Route::post('/updateUser', [AuthController::class,'UpdateUser'])->name('UpdateUser');
+
 Route::post('/submitreport', [ReportController::class,'AddReport']);
+
+Route::get('/logout', function (){
+    Session::flush();
+    return redirect()->route('SignIn');
+});
 
 
 Route::get('/graphs',[ReportController::class,'showGraphs'])->name('Graphs');
 
+
+Route::get('/map', function () {
+        return view('map');
+})->name('map');

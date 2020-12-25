@@ -41,11 +41,18 @@ class AuthController extends Controller
         return redirect()->route('SignIn');
     }
 
-    public function Submitreport(Request $request){
-        return view('Submitreport');
+    public function UpdateUser(Request $request){
+        UserModel::firstWhere('NIC','=',Session::get('NIC'))->update([
+            'Name'=>$request->input('Name'),
+            'NIC'=>$request->input('NIC'),
+            'Phone'=>$request->input('Phone'),
+            'Address'=>$request->input('Address'),
+            'Email'=>$request->input('Email'),
+        ]);
+
+        return redirect()->route('Profile');
+
     }
-
-
 }
 
 

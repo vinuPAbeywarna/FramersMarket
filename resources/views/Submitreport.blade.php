@@ -79,9 +79,9 @@
 
         // Initialize locationPicker plugin
         let lp = new locationPicker('map', {
-            setCurrentPosition: true, // You can omit this, defaults to true
+            setCurrentPosition: true,
         }, {
-            zoom: 11 // You can set any google map options here, zoom defaults to 15
+            zoom: 11
         });
 
 
@@ -91,6 +91,7 @@
         google.maps.event.addListener(lp.map, 'idle', function (event) {
             // Get current location and show it in HTML
             let location = lp.getMarkerPosition();
+            console.log(lp);
             locLat.value = location.lat;
             locLang.value = location.lng;
         });
