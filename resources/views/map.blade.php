@@ -57,7 +57,7 @@
             '<h3 id="firstHeading" class="firstHeading">{{$rp->updated_at}} | {{$rp->HarvestType}}</h3>' +
             '<div id="bodyContent">' +
 
-            @if($rp->Status == null)
+            @if($rp->Status == null && Session('UserType')=='KeelsStaff')
 
                 '<h4>Quality' +
             '</h4>' +
@@ -80,7 +80,7 @@
             @else
                 '<h4>Quality : {{$rp->Status}} </h4>' +
             @endif
-                @if($rp->SaleStatus == null)
+                @if($rp->SaleStatus == null && Session('UserType')=='KeelsStaff')
                 '<div class="row no-gutters">' +
             '<form method="post">' +
             '@csrf' +
@@ -108,10 +108,10 @@
             @endif
                 "<p>Description</p>" +
             "<p>{{$rp->Description}}</p>" +
-            "<p>Amount</p>" +
-            "<p>{{$rp->Amount}}kg</p>" +
-            "<p>District</p>" +
-            "<p>{{$rp->District}}</p>" +
+
+            "<p>Amount: {{$rp->Amount}}kg</p>" +
+
+            "<p>District: {{$rp->District}}</p>" +
             "</div>" +
             "</div>";
         const iw_{{$rp->id}}  = new google.maps.InfoWindow({
@@ -120,7 +120,10 @@
         const m_{{$rp->id}}  = new google.maps.Marker({
             position: lt_{{$rp->id}},
             map,
-            title: "Vinu"
+            @if($rp->SaleStatus != null)
+            icon: 'https://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|288800',
+            @endif
+            title: "{{$rp->HarvestType}}"
         });
         m_{{$rp->id}}.addListener("click", () => {
             iw_{{$rp->id}}.open(map, m_{{$rp->id}});
