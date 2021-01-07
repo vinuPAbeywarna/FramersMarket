@@ -24,7 +24,7 @@
             @if(Session('Logged'))
             <a href="/logout"><button class="btn btn-danger">SignOut</button></a>
             @else
-            <a href="/signin"><button class="btn btn-danger">Signin</button></a>
+            <a href="/signin"><button class="btn btn-success">Signin</button></a>
             @endif
         </div>
     </div>
