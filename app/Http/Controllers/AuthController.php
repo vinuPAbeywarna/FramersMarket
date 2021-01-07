@@ -49,6 +49,7 @@ class AuthController extends Controller
         $newUser->Phone = $request->input('Phone');
         $newUser->Address = $request->input('Address');
         $newUser->Email = $request->input('Email');
+        $newUser->UserType = $request->input('UserType');
         $newUser->save();
         return redirect()->back();
     }
