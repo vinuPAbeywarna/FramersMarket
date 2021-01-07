@@ -13,7 +13,7 @@
                 <li class="nav-item"><a class="nav-link" href="/addnewuser"><i class="fas fa-user"></i><span>New User</span></a></li>
             @endif
             <li class="nav-item"><a class="nav-link" href="/submitreport"><i class="fas fa-table"></i><span>Submit Reports</span></a></li>
-            <li class="nav-item"><a class="nav-link" href="/map"><i class="fa fa-map"></i><span>View on Map</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="/"><i class="fa fa-map"></i><span>View on Map</span></a></li>
             <li class="nav-item"><a class="nav-link" href="/graphs"><i class="fa fa-pie-chart"></i><span>Graphs</span></a></li>
 
         </ul>
