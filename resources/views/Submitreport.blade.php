@@ -59,6 +59,42 @@
                                         Lang : <input name="Lang" type="number" step="any" class="form-control" id="maplang">
                                     </label>
                                 </div>
+                                <div class="form-group">
+                                    <select class="form-control" name="District" required="">
+                                        <optgroup label="Select Your District">
+                                            <option value="Ampara">Ampara</option>
+                                            <option value="Anuradhapura">Anuradhapura</option>
+                                            <option value="Badulla">Badulla</option>
+                                            <option value="Batticaloa">Batticaloa</option>
+                                            <option value="Mannar">Batticaloa</option>
+
+                                            <option value="Colombo">Colombo</option>
+                                            <option value="Galle">Galle</option>
+                                            <option value="Gampaha">Badulla</option>
+                                            <option value="Hambanthota">Batticaloa</option>
+                                            <option value="Jaffna">Batticaloa</option>
+
+                                            <option value="Kaluthara">Ampara</option>
+                                            <option value="Kandy">Anuradhapura</option>
+                                            <option value="Kegalle">Badulla</option>
+                                            <option value="Kilinochchi">Batticaloa</option>
+                                            <option value="kurunegala">Batticaloa</option>
+
+                                            <option value="Matara">Ampara</option>
+                                            <option value="Matale">Anuradhapura</option>
+                                            <option value="Monaragala">Badulla</option>
+                                            <option value="mulathiv">Batticaloa</option>
+                                            <option value="Nuwara Eliya">Batticaloa</option>
+
+                                            <option value="Putthalama">Ampara</option>
+                                            <option value="Rathnapura">Anuradhapura</option>
+                                            <option value="Trincomalee">Badulla</option>
+                                            <option value="vavniya">Batticaloa</option>
+                                            <option value="Matale">Batticaloa</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+
                                 <div class="form-group"><textarea class="form-control" name="Description" placeholder="Description" required=""></textarea></div>
                                 <button class="btn btn-primary btn-block btn-lg" type="submit">Submit Report</button>
                             </form>

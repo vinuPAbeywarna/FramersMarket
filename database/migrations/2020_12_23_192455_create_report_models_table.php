@@ -22,6 +22,7 @@ class CreateReportModelsTable extends Migration
             $table->float('Lat');
             $table->float('Lang');
             $table->string('Description');
+            $table->string('District');
             $table->enum('Status',['High','Good','Average','Low','Bad','Inedible'])->nullable();
             $table->enum('SaleStatus',['Bought','Ignored'])->nullable();
             $table->timestamps();
