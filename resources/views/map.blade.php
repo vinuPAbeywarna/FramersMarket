@@ -49,11 +49,24 @@
 
             const lt_{{$rp->id}} = { lat: {{$rp->Lat}}, lng: {{$rp->Lang}} };
             const cs_{{$rp->id}} =
-                '<div id="content">' +
+                '<div style="width:512px" id="content">' +
                 '<div id="siteNotice">' +
                 "</div>" +
                 '<h3 id="firstHeading" class="firstHeading">{{$rp->updated_at}} | {{$rp->HarvestType}}</h3>' +
                 '<div id="bodyContent">' +
+
+                '<div class="row">' +
+                '<select class="form-control" name="UserType" required="">' +
+                '<optgroup label="Select User Type">' +
+                '<option value="KeelsStaff">KeelsStaff</option>' +
+                '</optgroup>' +
+                '</select>' +
+                '' +
+                '' +
+                '<button class="btn btn-sm">Set</button>' +
+                '</div>' +
+
+
                 "<p>{{$rp->Description}}</p>" +
                 "</div>" +
                 "</div>";

@@ -57,7 +57,9 @@ Route::get('/addnewuser', function () {
         return redirect()->route('SignIn');
     }
 
-})->name('Submitreport');
+})->name('addnewuser');
+
+Route::post('/addnewuser', [AuthController::class, 'NewUser'])->name('newuser');
 
 //Photo Upload
 Route::post('/photoUpload', [PhotoUploadController::class, 'Upload'])->name('PhotoUpload');

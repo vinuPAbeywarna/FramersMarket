@@ -41,6 +41,18 @@ class AuthController extends Controller
         return redirect()->route('SignIn');
     }
 
+    public function NewUser(Request $request){
+        $newUser = new UserModel();
+        $newUser->Name = $request->input('Name');
+        $newUser->NIC = $request->input('NIC');
+        $newUser->PasswordHash = Hash::make($request->input('Password'));
+        $newUser->Phone = $request->input('Phone');
+        $newUser->Address = $request->input('Address');
+        $newUser->Email = $request->input('Email');
+        $newUser->save();
+        return redirect()->back();
+    }
+
     public function UpdateUser(Request $request){
         UserModel::firstWhere('NIC','=',Session::get('NIC'))->update([
             'Name'=>$request->input('Name'),

@@ -85,7 +85,7 @@
                                                     class="form-control" type="text"
                                                     name="Address"></div>
                                             <div class="form-group">
-                                                <button class="btn btn-primary btn-sm" type="submit">Save
+                                                <button class="btn btn-primary btn-lg btn-block" type="submit">Save
                                                 </button>
                                             </div>
                                         </form>
