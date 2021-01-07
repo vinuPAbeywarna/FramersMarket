@@ -8,8 +8,9 @@ use Illuminate\Support\Facades\Session;
 
 class ReportController extends Controller
 {
-    public function AddReport(Request $request){
-        try{
+    public function AddReport(Request $request)
+    {
+        try {
             $newReport = new ReportModel();
             $newReport->FarmerNIC = Session::get('NIC');
             $newReport->HarvestType = $request->input('HarvestType');
@@ -21,13 +22,25 @@ class ReportController extends Controller
             $newReport->Description = $request->input('Description');
             $newReport->save();
             return view('Submitreport');
-        } catch (\Exception $e){
-            return response($e,200);
+        } catch (\Exception $e) {
+            return response($e, 200);
         }
     }
 
-    public function showGraphs(){
+    public function setStatus(Request $request){
+        //return response($request->has('BUY'));
+        if ($request->has('BUY')){
+            ReportModel::where('id','=',$request->get('ID'))->update(['SaleStatus'=>'Bought']);
+        } else if ($request->has('IGNORE')){
+            ReportModel::where('id','=',$request->get('ID'))->update(['SaleStatus'=>'Ignored']);
+        } else if ($request->has('Status')){
+            ReportModel::where('id','=',$request->get('ID'))->update(['Status'=>$request->get('Status')]);
+        }
+        return redirect()->back();
+    }
 
+    public function showGraphs()
+    {
 
 
         $Reports = ReportModel::get();
@@ -35,27 +48,26 @@ class ReportController extends Controller
         $Waste = 0;
         $Amount = 0;
 
-        foreach($Reports as $rp){
+        foreach ($Reports as $rp) {
             $Waste = $Waste + $rp->WAmount;
             $Amount = $Amount + $rp->Amount;
         }
 
         $Wastage = [
-            $Waste,$Amount
+            $Waste, $Amount
         ];
 
         $HarvestGraph = [
-            ReportModel::where('HarvestType','=','Vegetables')->count(),
-            ReportModel::where('HarvestType','=','Fruits')->count(),
-            ReportModel::where('HarvestType','=','Nuts')->count(),
-            ReportModel::where('HarvestType','=','Grain')->count(),
+            ReportModel::where('HarvestType', '=', 'Vegetables')->count(),
+            ReportModel::where('HarvestType', '=', 'Fruits')->count(),
+            ReportModel::where('HarvestType', '=', 'Nuts')->count(),
+            ReportModel::where('HarvestType', '=', 'Grain')->count(),
         ];
 
 
-
-        if (Session::get('Logged')){
+        if (Session::get('Logged')) {
             //return response($HarvestGraph,200);
-            return view('Graphs')->with(['HarvestGraph'=>$HarvestGraph, 'Wastage'=>$Wastage]);
+            return view('Graphs')->with(['HarvestGraph' => $HarvestGraph, 'Wastage' => $Wastage]);
         } else {
             return redirect()->route('SignIn');
         }

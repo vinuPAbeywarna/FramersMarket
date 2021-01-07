@@ -66,6 +66,7 @@ Route::post('/photoUpload', [PhotoUploadController::class, 'Upload'])->name('Pho
 Route::post('/updateUser', [AuthController::class, 'UpdateUser'])->name('UpdateUser');
 
 Route::post('/submitreport', [ReportController::class, 'AddReport']);
+Route::post('/map', [ReportController::class, 'setStatus']);
 
 Route::get('/logout', function () {
     Session::flush();
