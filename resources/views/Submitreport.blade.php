@@ -70,27 +70,27 @@
 
                                             <option value="Colombo">Colombo</option>
                                             <option value="Galle">Galle</option>
-                                            <option value="Gampaha">Badulla</option>
-                                            <option value="Hambanthota">Batticaloa</option>
-                                            <option value="Jaffna">Batticaloa</option>
+                                            <option value="Gampaha">Gampaha</option>
+                                            <option value="Hambanthota">Hambanthota</option>
+                                            <option value="Jaffna">Jaffna</option>
 
-                                            <option value="Kaluthara">Ampara</option>
-                                            <option value="Kandy">Anuradhapura</option>
-                                            <option value="Kegalle">Badulla</option>
-                                            <option value="Kilinochchi">Batticaloa</option>
-                                            <option value="kurunegala">Batticaloa</option>
+                                            <option value="Kaluthara">Kaluthara</option>
+                                            <option value="Kandy">Kandy</option>
+                                            <option value="Kegalle">Kegalle</option>
+                                            <option value="Kilinochchi">Kilinochchi</option>
+                                            <option value="kurunegala">kurunegala</option>
 
-                                            <option value="Matara">Ampara</option>
-                                            <option value="Matale">Anuradhapura</option>
-                                            <option value="Monaragala">Badulla</option>
-                                            <option value="mulathiv">Batticaloa</option>
-                                            <option value="Nuwara Eliya">Batticaloa</option>
+                                            <option value="Matara">Matara</option>
+                                            <option value="Matale">Matale</option>
+                                            <option value="Monaragala">Monaragala</option>
+                                            <option value="mulathiv">mulathiv</option>
+                                            <option value="Nuwara Eliya">Nuwara Eliya</option>
 
-                                            <option value="Putthalama">Ampara</option>
-                                            <option value="Rathnapura">Anuradhapura</option>
-                                            <option value="Trincomalee">Badulla</option>
-                                            <option value="vavniya">Batticaloa</option>
-                                            <option value="Matale">Batticaloa</option>
+                                            <option value="Putthalama">Putthalama</option>
+                                            <option value="Rathnapura">Rathnapura</option>
+                                            <option value="Trincomalee">Trincomalee</option>
+                                            <option value="vavniya">vavniya</option>
+                                            <option value="Matale">Matale</option>
                                         </optgroup>
                                     </select>
                                 </div>
