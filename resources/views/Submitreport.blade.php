@@ -83,13 +83,13 @@
                                             <option value="Matara">Matara</option>
                                             <option value="Matale">Matale</option>
                                             <option value="Monaragala">Monaragala</option>
-                                            <option value="mulathiv">mulathiv</option>
+                                            <option value="Mulathiv">Mulathiv</option>
                                             <option value="Nuwara Eliya">Nuwara Eliya</option>
 
                                             <option value="Putthalama">Putthalama</option>
                                             <option value="Rathnapura">Rathnapura</option>
                                             <option value="Trincomalee">Trincomalee</option>
-                                            <option value="vavniya">vavniya</option>
+                                            <option value="Vavniya">Vavniya</option>
                                             <option value="Matale">Matale</option>
                                         </optgroup>
                                     </select>
