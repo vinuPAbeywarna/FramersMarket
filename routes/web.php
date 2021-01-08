@@ -65,10 +65,11 @@ Route::post('/addnewuser', [AuthController::class, 'NewUser'])->name('newuser');
 Route::post('/photoUpload', [PhotoUploadController::class, 'Upload'])->name('PhotoUpload');
 Route::post('/updateUser', [AuthController::class, 'UpdateUser'])->name('UpdateUser');
 //Route::delete('/delete-report',[AuthController::class, 'DeleteReport']);
-Route::delete('/delete-report/{report_models}','AuthController@delete');
+//Route::delete('/delete-report/{report_models}','AuthController@delete');
 
 Route::post('/submitreport', [ReportController::class, 'AddReport']);
 Route::post('/', [ReportController::class, 'setStatus']);
+Route::delete('/delete-report/{report_models}','ReportController@delete');
 
 
 Route::get('/logout', function () {
