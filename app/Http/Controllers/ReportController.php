@@ -89,8 +89,8 @@ class ReportController extends Controller
 
     public function UpdateReport(Request $request)
     {
-        ReportModel::firstWhere('NIC','=',Session::get('NIC'))->update([
-            'Name'=>$request->input('Name'),
+        ReportModel::firstWhere('id','=',Session::get('id'))->update([
+            'Name'=>$request->input(''),
             'NIC'=>$request->input('NIC'),
             'Phone'=>$request->input('Phone'),
             'Address'=>$request->input('Address'),
