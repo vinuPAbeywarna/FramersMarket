@@ -102,6 +102,6 @@ class ReportController extends Controller
 
         ]);
 
-        return redirect()->back();
+        return view('Submitreport');
     }
 }
