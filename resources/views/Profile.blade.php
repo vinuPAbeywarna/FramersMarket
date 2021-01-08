@@ -143,9 +143,11 @@
                                                 <tr>
                                                     <td>{{$Report->HarvestType}} | {{$Report->updated_at}}</td>
                                                     <td>
-                                                        <form  method="post" action="/delete-report.$report_model->id">
+
                                                         <div class="btn-group btn-group-sm" role="group">
                                                             <button class="btn btn-primary" type="button">Edit</button>
+                                                            <form  method="post" action="/delete-report.$report_model->id">
+                                                                @csrf
                                                             <button class="btn btn-danger" type="button">Delete</button>
                                                         </div>
                                                     </td>
