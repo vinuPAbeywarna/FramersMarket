@@ -89,20 +89,11 @@ class ReportController extends Controller
 
     public function UpdateReport(Request $request)
     {
-        $Reports = ReportModel::get();
-        ReportModel::firstWhere('id','=',Session::get('id'))->update([
-            'FarmerNIC'=>$request->update('FarmerNIC'),
-            'HarvestType'=>$request->update('HarvestType'),
-            'Amount'=>$request->update('Amount'),
-            'WAmount'=>$request->update('WAmount'),
-            'Lat'=>$request->update('Lat'),
-            'Lang'=>$request->update('Lang'),
-            'Description'=>$request->update('Description'),
-            'District'=>$request->update('District'),
-            'Image'=>$request->update('Image'),
 
-        ]);
-
+        ReportModel::firstWhere('id','=',Session::get('id'))->update();
         return view('Submitreport');
+
+
+        
     }
 }
