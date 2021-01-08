@@ -41,8 +41,6 @@ class ReportController extends Controller
 
     public function showGraphs()
     {
-
-
         $Reports = ReportModel::get();
 
         $Waste = 0;
@@ -85,8 +83,8 @@ class ReportController extends Controller
 
     public function DeleteReport(Request $request)
     {
-        ReportModel::findWhere('Report Type / Date','=',Session::get("Report Type / Date"))->delete;
-        return redirect()->route('Profile');
+        ReportModel::where('id','=',$request->get('id'))->delete();
+        return redirect()->back();
 
 
 

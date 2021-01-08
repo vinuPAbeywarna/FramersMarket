@@ -63,9 +63,11 @@ Route::post('/addnewuser', [AuthController::class, 'NewUser'])->name('newuser');
 
 //Photo Upload
 Route::post('/photoUpload', [PhotoUploadController::class, 'Upload'])->name('PhotoUpload');
+//User Update
 Route::post('/updateUser', [AuthController::class, 'UpdateUser'])->name('UpdateUser');
-//Route::delete('delete-reports/{HarvestType}','Farmer\AuthController@delete');
-//Route::post('/delete-report',[AuthController::class,'Delete'])->name('DeleteReport');
+
+//Delete Reports
+Route::post('/deletereport',[ReportController::class,'DeleteReport'])->name('DeleteReport');
 
 Route::post('/submitreport', [ReportController::class, 'AddReport']);
 Route::post('/', [ReportController::class, 'setStatus']);

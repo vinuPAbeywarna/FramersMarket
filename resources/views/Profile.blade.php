@@ -118,7 +118,7 @@
                         </div>
                     </div>
                 </div>
-                @if(\Illuminate\Support\Facades\Session::get('UserType') == 'Farmer')
+                @if(Session('UserType') == 'Farmer' || true)
                     <div class="card shadow mb-5">
                         <div class="card-header py-3">
                             <p class="text-primary m-0 font-weight-bold">Reports</p>
@@ -136,8 +136,7 @@
                                             </thead>
                                             <tbody>
                                             @php
-
-                                                $Reports = \App\Models\ReportModel::where('FarmerNIC','=', \Illuminate\Support\Facades\Session::get('NIC'))->get();
+                                                $Reports = \App\Models\ReportModel::where('FarmerNIC','=', Session('NIC'))->get();
                                             @endphp
                                             @foreach($Reports as $Report)
                                                 <tr>
@@ -147,9 +146,10 @@
                                                         <div class="btn-group btn-group-sm" role="group">
                                                             <button class="btn btn-primary" type="button">Edit</button>
 
-                                                            <form method="post" action="/delete-report">
+                                                            <form method="post" action="/deletereport">
                                                                 @csrf
-                                                            <button class="btn btn-danger" type="button">Delete</button>
+                                                                <input hidden name="id" value="{{$Report->id}}">
+                                                            <input class="btn btn-danger" type="submit" value="Delete">
                                                             </form>
                                                         </div>
                                                     </td>
