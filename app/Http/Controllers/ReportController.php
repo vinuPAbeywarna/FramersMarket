@@ -86,4 +86,10 @@ class ReportController extends Controller
         ReportModel::where('id','=',$request->get('id'))->delete();
         return redirect()->back();
     }
+
+    public function UpdateReport(Request $request)
+    {
+        ReportModel::where('id','=',$request->get('id'))->update();
+        return redirect()->back();
+    }
 }
