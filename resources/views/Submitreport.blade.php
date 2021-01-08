@@ -97,7 +97,7 @@
 
                                 <div class="form-group">
                                     <label for="exampleForControlfile1">Select Product Image</label>
-                                    <input type="">
+                                    <input type="file" class="">
                                 </div>
 
                                 <div class="form-group"><textarea class="form-control" name="Description" placeholder="Description" required=""></textarea></div>
