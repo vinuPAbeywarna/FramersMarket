@@ -66,8 +66,8 @@ class ReportController extends Controller
 
         $Location = [
 
-            ReportModel::where('Location', '=', 'Hambanthota')->count(),
-            ReportModel::where('Location', '=', 'Mathale')->count(),
+            ReportModel::where('District', '=', 'Hambanthota')->count(),
+            ReportModel::where('District', '=', 'Jaffna')->count(),
 
 
         ];
@@ -77,7 +77,7 @@ class ReportController extends Controller
 
         if (Session::get('Logged')) {
             //return response($HarvestGraph,200);
-            return view('Graphs')->with(['HarvestGraph' => $HarvestGraph, 'Wastage' => $Wastage, 'Locations'=>$Location]);
+            return view('Graphs')->with(['HarvestGraph' => $HarvestGraph, 'Wastage' => $Wastage, 'Location'=>$Location]);
         } else {
             return redirect()->route('SignIn');
         }

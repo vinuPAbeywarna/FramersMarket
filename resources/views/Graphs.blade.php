@@ -81,10 +81,10 @@
     let myChart3 = new Chart(ctx3, {
         type: 'pie',
         data: {
-            labels: ['District'],
+            labels: ['Hambanthota','Jaffna'],
             datasets: [{
                 label: '# of Reports',
-                data: [{{$Location[0]}},{{$Location[1]}},{{$Location[2]}},{{$Location[3]}},{{$Location[4]}}],
+                data: [{{$Location[0]}},{{$Location[1]}}],
                 backgroundColor: [
                     'rgba(54, 162, 235, 1)',
                     'rgba(50, 168, 82, 1)',
