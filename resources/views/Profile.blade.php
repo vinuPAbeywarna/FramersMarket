@@ -143,6 +143,7 @@
                                                 <tr>
                                                     <td>{{$Report->HarvestType}} | {{$Report->updated_at}}</td>
                                                     <td>
+                                                        <form
                                                         <div class="btn-group btn-group-sm" role="group">
                                                             <button class="btn btn-primary" type="button">Edit</button>
                                                             <button class="btn btn-danger" type="button">Delete</button>
