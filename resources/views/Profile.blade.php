@@ -118,7 +118,7 @@
                         </div>
                     </div>
                 </div>
-                @if(Session('UserType') == 'Farmer' || true)
+                @if(Session('UserType') == 'Farmer')
                     <div class="card shadow mb-5">
                         <div class="card-header py-3">
                             <p class="text-primary m-0 font-weight-bold">Reports</p>
