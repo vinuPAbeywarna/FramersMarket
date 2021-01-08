@@ -40,9 +40,5 @@ class CreateReportModelsTable extends Migration
         Schema::dropIfExists('report_models');
     }
 
-    public function Delete($report_models)
-    {
-        $report_models::find($report_models)->delete();
-        return redirect()->profile();
-    }
+
 }

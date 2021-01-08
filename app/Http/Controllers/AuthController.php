@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\ReportModel;
 use App\Models\UserModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
+use Symfony\Component\HttpKernel\Profiler\Profile;
 
 class AuthController extends Controller
 {
@@ -63,6 +65,13 @@ class AuthController extends Controller
             'Email'=>$request->input('Email'),
         ]);
 
+        return redirect()->route('Profile');
+
+    }
+
+    public function Delete($HarvestType)
+    {
+        ReportModel::findorFail($HarvestType)->delete();
         return redirect()->route('Profile');
 
     }
