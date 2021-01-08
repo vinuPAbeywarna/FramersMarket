@@ -69,7 +69,8 @@ Route::post('/updateUser', [AuthController::class, 'UpdateUser'])->name('UpdateU
 
 Route::post('/submitreport', [ReportController::class, 'AddReport']);
 Route::post('/', [ReportController::class, 'setStatus']);
-Route::delete('/delete-report/{report_models}','ReportController@delete');
+//Route::delete('/delete-report/{report_models}','ReportController@delete');
+Route::delete('/delete-report/{report_models}', [ReportController::class,'ReportController'])->action='ReportController@delete';
 
 
 Route::get('/logout', function () {
