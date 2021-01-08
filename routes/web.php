@@ -70,7 +70,13 @@ Route::post('/updateUser', [AuthController::class, 'UpdateUser'])->name('UpdateU
 Route::post('/deletereport',[ReportController::class,'DeleteReport'])->name('DeleteReport');
 
 //Edit Report
-Route::get('/updatereport',[ReportController::class,'UpdateReport'])->name('UpdateReport');
+Route::get('/updatereport',function (){
+    if (Session::get('Logged')) {
+        return view('Profile');
+    } else {
+        return redirect()->route('SignIn');
+    }
+}
 
 
 Route::post('/submitreport', [ReportController::class, 'AddReport']);
