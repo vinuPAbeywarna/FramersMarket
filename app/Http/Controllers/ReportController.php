@@ -90,10 +90,10 @@ class ReportController extends Controller
     public function UpdateReport(Request $request)
     {
 
-        ReportModel::firstWhere('id','=',Session::get('id'))->update();
+        ReportModel::firstWhere('id','=',Session::get('id'));
         return view('Submitreport');
 
 
-        
+
     }
 }
