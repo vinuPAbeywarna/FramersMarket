@@ -69,10 +69,12 @@ class AuthController extends Controller
 
     }
 
-    public function Delete($HarvestType)
+    public function DeleteReport(Request $request)
     {
-        ReportModel::findorFail($HarvestType)->delete();
+        ReportModel::findWhere('id','=',Session::get("id"))->delete;
         return redirect()->route('Profile');
+
+
 
     }
 }
