@@ -92,6 +92,7 @@ class ReportController extends Controller
 
         ReportModel::firstWhere('id','=',Session::get('id'));
         return view('Submitreport');
+        $username = $request->old('username');
 
 
 
