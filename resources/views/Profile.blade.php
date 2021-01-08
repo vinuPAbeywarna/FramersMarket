@@ -149,6 +149,7 @@
                                                             <form  method="post" action="/delete-report.$report_model->id">
                                                                 @csrf
                                                             <button class="btn btn-danger" type="button">Delete</button>
+                                                            </form>
                                                         </div>
                                                     </td>
                                                 </tr>
