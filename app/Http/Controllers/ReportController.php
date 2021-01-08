@@ -72,4 +72,13 @@ class ReportController extends Controller
             return redirect()->route('SignIn');
         }
     }
+
+    public function DeleteReport(Request $request)
+    {
+        ReportModel::findWhere('id','=',Session::get("id"))->delete;
+        return redirect()->route('Profile');
+
+
+
+    }
 }

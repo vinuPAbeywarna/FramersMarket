@@ -69,14 +69,7 @@ class AuthController extends Controller
 
     }
 
-    public function DeleteReport(Request $request)
-    {
-        ReportModel::findWhere('id','=',Session::get("id"))->delete;
-        return redirect()->route('Profile');
 
-
-
-    }
 }
 
 
