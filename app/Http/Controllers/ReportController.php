@@ -92,8 +92,8 @@ class ReportController extends Controller
         ReportModel::firstWhere('id','=',Session::get('id'))->update([
             'FarmerNIC'=>$request->input('FarmerNIC'),
             'HarvestType'=>$request->input('HarvestType'),
-            'Phone'=>$request->input('Phone'),
-            'Address'=>$request->input('Address'),
+            'Amount'=>$request->input('Amount'),
+            'WAmount'=>$request->input('WAmount'),
             'Email'=>$request->input('Email'),
         ]);
 
