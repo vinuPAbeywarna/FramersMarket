@@ -96,6 +96,7 @@ class ReportController extends Controller
             'WAmount'=>$request->input('WAmount'),
             'Lat'=>$request->input('Lat'),
             'Lang'=>$request->input('Lang'),
+            'Description'=>$request->input('Description'),
             'Lat'=>$request->input('Lat'),
         ]);
 
