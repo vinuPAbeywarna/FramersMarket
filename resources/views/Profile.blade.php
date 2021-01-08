@@ -144,7 +144,12 @@
                                                     <td>
 
                                                         <div class="btn-group btn-group-sm" role="group">
-                                                            <button class="btn btn-primary" type="button">Edit</button>
+
+                                                            <form method="post" action="/updatereport">
+                                                                @csrf
+                                                                <input hidden name="id" value="{{$Report->id}}">
+                                                                <input class="btn btn-primary" type="submit" value="Edit">
+                                                            </form>
 
                                                             <form method="post" action="/deletereport">
                                                                 @csrf
