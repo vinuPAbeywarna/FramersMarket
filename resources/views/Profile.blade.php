@@ -147,6 +147,7 @@
                                                         <div class="btn-group btn-group-sm" role="group">
                                                             <button class="btn btn-primary" type="button">Edit</button>
                                                             <form  method="post" action="/delete-report.$report_model->id">
+                                                                {{method_field('Delete')}}
                                                                 @csrf
                                                             <button class="btn btn-danger" type="button">Delete</button>
                                                             </form>
