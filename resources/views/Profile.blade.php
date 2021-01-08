@@ -147,7 +147,7 @@
                                                         <div class="btn-group btn-group-sm" role="group">
                                                             <button class="btn btn-primary" type="button">Edit</button>
 
-                                                            <form action="" method="post">
+                                                            <form method="post" action="/delete-report">
                                                                 @csrf
                                                             <button class="btn btn-danger" type="button">Delete</button>
                                                             </form>

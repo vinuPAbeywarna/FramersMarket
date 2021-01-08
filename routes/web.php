@@ -69,9 +69,9 @@ Route::post('/updateUser', [AuthController::class, 'UpdateUser'])->name('UpdateU
 
 Route::post('/submitreport', [ReportController::class, 'AddReport']);
 Route::post('/', [ReportController::class, 'setStatus']);
-Route::post('/delete-report',[AuthController::class,'Delete'])->name('DeleteReport');
+Route::post('/delete-report',[ReportController::class,'Delete'])->name('DeleteReport');
 
-//Route::delete('/delete-report/{HarvestType}','ReportController@delete');
+
 
 
 
