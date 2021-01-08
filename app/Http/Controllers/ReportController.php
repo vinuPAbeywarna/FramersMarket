@@ -95,6 +95,8 @@ class ReportController extends Controller
             'Amount'=>$request->input('Amount'),
             'WAmount'=>$request->input('WAmount'),
             'Lat'=>$request->input('Lat'),
+            'Lang'=>$request->input('Lang'),
+            'Lat'=>$request->input('Lat'),
         ]);
 
         return redirect()->route('Profile');
