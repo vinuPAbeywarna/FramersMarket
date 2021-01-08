@@ -146,7 +146,7 @@
 
                                                         <div class="btn-group btn-group-sm" role="group">
                                                             <button class="btn btn-primary" type="button">Edit</button>
-                                                            <form  method="post" action="/delete-report.$report_model->id">
+                                                            <form  method="post" action="/delete-report.$report_model->HarvestType">
                                                                 {{method_field('DeleteReport')}}
                                                                 @csrf
                                                             <button class="btn btn-danger" type="button">Delete</button>
