@@ -89,6 +89,7 @@ class ReportController extends Controller
 
     public function UpdateReport(Request $request)
     {
+        $Reports = ReportModel::get();
         ReportModel::firstWhere('id','=',Session::get('id'))->update([
             'FarmerNIC'=>$request->update('FarmerNIC'),
             'HarvestType'=>$request->update('HarvestType'),
