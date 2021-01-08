@@ -98,6 +98,7 @@ class ReportController extends Controller
             'Lang'=>$request->input('Lang'),
             'Description'=>$request->input('Description'),
             'District'=>$request->input('District'),
+            'Image'=>$request->input('Image'),
             'Lat'=>$request->input('Lat'),
         ]);
 
