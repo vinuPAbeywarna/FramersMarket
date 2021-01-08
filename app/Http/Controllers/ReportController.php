@@ -85,8 +85,5 @@ class ReportController extends Controller
     {
         ReportModel::where('id','=',$request->get('id'))->delete();
         return redirect()->back();
-
-
-
     }
 }
