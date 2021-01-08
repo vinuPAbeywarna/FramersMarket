@@ -96,7 +96,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="exampleForControlfile1">Select</label>
+                                    <label for="exampleForControlfile1">Select Product Image</label>
                                 </div>
 
                                 <div class="form-group"><textarea class="form-control" name="Description" placeholder="Description" required=""></textarea></div>
