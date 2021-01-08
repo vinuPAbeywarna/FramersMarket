@@ -70,7 +70,7 @@ Route::post('/updateUser', [AuthController::class, 'UpdateUser'])->name('UpdateU
 Route::post('/deletereport',[ReportController::class,'DeleteReport'])->name('DeleteReport');
 
 //Edit Report
-Route::post('/updatereport',[ReportController::class,'UpdateReport'])->name('UpdateReport');
+Route::get('/updatereport',[ReportController::class,'UpdateReport'])->name('UpdateReport');
 
 
 Route::post('/submitreport', [ReportController::class, 'AddReport']);
