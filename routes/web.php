@@ -67,6 +67,7 @@ Route::post('/updateUser', [AuthController::class, 'UpdateUser'])->name('UpdateU
 
 Route::post('/submitreport', [ReportController::class, 'AddReport']);
 Route::post('/', [ReportController::class, 'setStatus']);
+Route::get()
 
 Route::get('/logout', function () {
     Session::flush();
