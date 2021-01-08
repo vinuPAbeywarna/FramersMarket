@@ -64,10 +64,11 @@ Route::post('/addnewuser', [AuthController::class, 'NewUser'])->name('newuser');
 //Photo Upload
 Route::post('/photoUpload', [PhotoUploadController::class, 'Upload'])->name('PhotoUpload');
 Route::post('/updateUser', [AuthController::class, 'UpdateUser'])->name('UpdateUser');
+Route::delete('/delete-report',[AuthController::class, 'DeleteReport']);
 
 Route::post('/submitreport', [ReportController::class, 'AddReport']);
 Route::post('/', [ReportController::class, 'setStatus']);
-Route::delete('/delete-report',[ReportController::class, 'DeleteReport']);
+
 
 Route::get('/logout', function () {
     Session::flush();
