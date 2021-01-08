@@ -65,7 +65,9 @@ class ReportController extends Controller
         ];
 
         $Location = [
-            $Reports = ReportModel::get()
+
+            ReportModel::where('Location', '=', 'Hambanthota')->count(),
+            ReportModel::where('Location', '=', 'Mathale')->count(),
 
 
         ];
