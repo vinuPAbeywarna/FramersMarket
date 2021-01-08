@@ -64,10 +64,18 @@ class ReportController extends Controller
             ReportModel::where('HarvestType', '=', 'Grain')->count(),
         ];
 
+        $Location = [
+            $Reports = ReportModel::get()
+
+
+        ];
+
+
+
 
         if (Session::get('Logged')) {
             //return response($HarvestGraph,200);
-            return view('Graphs')->with(['HarvestGraph' => $HarvestGraph, 'Wastage' => $Wastage]);
+            return view('Graphs')->with(['HarvestGraph' => $HarvestGraph, 'Wastage' => $Wastage, 'Locations'=>$Location]);
         } else {
             return redirect()->route('SignIn');
         }
