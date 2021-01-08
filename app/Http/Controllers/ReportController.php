@@ -94,7 +94,7 @@ class ReportController extends Controller
             'HarvestType'=>$request->input('HarvestType'),
             'Amount'=>$request->input('Amount'),
             'WAmount'=>$request->input('WAmount'),
-            'Email'=>$request->input('Email'),
+            'Lat'=>$request->input('Lat'),
         ]);
 
         return redirect()->route('Profile');
