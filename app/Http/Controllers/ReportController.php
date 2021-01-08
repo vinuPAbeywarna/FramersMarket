@@ -75,7 +75,7 @@ class ReportController extends Controller
 
     public function DeleteReport(Request $request)
     {
-        ReportModel::findWhere('id','=',Session::get("id"))->delete;
+        ReportModel::findWhere('Report Type / Date','=',Session::get("Report Type / Date"))->delete;
         return redirect()->route('Profile');
 
 

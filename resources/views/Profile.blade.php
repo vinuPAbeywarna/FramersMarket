@@ -130,7 +130,6 @@
                                         <table class="table">
                                             <thead>
                                             <tr>
-                                                <th>Report id</th>
                                                 <th>Report Type / Date</th>
                                                 <th>Actions</th>
                                             </tr>
