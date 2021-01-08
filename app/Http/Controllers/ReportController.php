@@ -89,7 +89,14 @@ class ReportController extends Controller
 
     public function UpdateReport(Request $request)
     {
-        ReportModel::where('id','=',$request->get('id'))->update();
-        return redirect()->back();
+        ReportModel::firstWhere('NIC','=',Session::get('NIC'))->update([
+            'Name'=>$request->input('Name'),
+            'NIC'=>$request->input('NIC'),
+            'Phone'=>$request->input('Phone'),
+            'Address'=>$request->input('Address'),
+            'Email'=>$request->input('Email'),
+        ]);
+
+        return redirect()->route('Profile');
     }
 }
