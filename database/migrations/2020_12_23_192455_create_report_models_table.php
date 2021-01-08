@@ -43,6 +43,6 @@ class CreateReportModelsTable extends Migration
     public function Delete($report_model)
     {
         $report_model::find($report_model)->delete();
-        return redirect()
+        return redirect()->back();
     }
 }
