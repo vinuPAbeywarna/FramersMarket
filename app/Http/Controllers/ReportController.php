@@ -93,4 +93,13 @@ class ReportController extends Controller
         return view('UpdateReport')->with(['Report'=>$Report]);
 
     }
+
+
+    public function UpdateReportSave(Request $request)
+    {
+        ReportModel::where('id','=',$request->get('id'))->update([
+            'HarvestType'=>$request->get('HarvestType'),
+            'Amount'=>$request->get('Amount')
+        ]);
+    }
 }

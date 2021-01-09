@@ -53,10 +53,10 @@
                             </div>
                             <div class="form-group"><label>Selected Location</label>
                                 <label>
-                                    Lat :<input name="Lat" type="number" step="any" class="form-control" id="maplat">
+                                    Lat :<input value="{{$Report->Lat}}" name="Lat" type="number" step="any" class="form-control" id="maplat">
                                 </label>
                                 <label>
-                                    Lang : <input name="Lang" type="number" step="any" class="form-control" id="maplang">
+                                    Lang : <input value="{{$Report->Lang}}" name="Lang" type="number" step="any" class="form-control" id="maplang">
                                 </label>
                             </div>
                             <div class="form-group">
@@ -97,11 +97,11 @@
 
                             <div class="form-group">
                                 <label for="exampleForControlfile1">Select Product Image</label>
-                                <input type="file" class="form-control" id="exampleForControlfile1">
+                                <input type="file" name="PImage" class="form-control" id="exampleForControlfile1">
                             </div>
 
-                            <div class="form-group"><textarea class="form-control" name="Description" placeholder="Description" required=""></textarea></div>
-                            <button class="btn btn-primary btn-block btn-lg" type="submit">Submit Report</button>
+                            <div class="form-group"><textarea value="{{$Report->Description}}" class="form-control" name="Description" placeholder="Description" required=""></textarea></div>
+                            <button class="btn btn-primary btn-block btn-lg" type="submit">Save Report</button>
                         </form>
 
                     </div>
