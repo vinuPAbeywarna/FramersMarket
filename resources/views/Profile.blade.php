@@ -145,7 +145,7 @@
 
                                                         <div class="btn-group btn-group-sm" role="group">
 
-                                                            <form method="get" action="/updatereport">
+                                                            <form method="get" action="/updatereport/{{$Report->id}}">
                                                                 @csrf
                                                                 <input hidden name="id" value="{{$Report->id}}| {{$Report->updated_at}}">
                                                                 <input class="btn btn-primary" type="submit" value="Edit">

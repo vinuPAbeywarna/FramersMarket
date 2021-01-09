@@ -87,14 +87,10 @@ class ReportController extends Controller
         return redirect()->back();
     }
 
-    public function UpdateReport(Request $request)
+    public function UpdateReport(Request $request, $id)
     {
-
-        ReportModel::firstWhere('id','=',Session::get('id'));
-        return view('Submitreport');
-        
-
-
+        $Report =  ReportModel::firstWhere('id','=',$id)->get();
+        return view('UpdateReport')->with(['Report'=>$Report]);
 
     }
 }
