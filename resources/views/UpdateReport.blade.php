@@ -5,11 +5,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>FarmersMarket</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="../../assets/fonts/fontawesome5-overrides.min.css">
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9vA47OJhiGUHAMljNXKYS_tV0863vUcY"></script>
     <script src="https://unpkg.com/location-picker/dist/location-picker.min.js"></script>
 </head>
@@ -36,18 +36,18 @@
                         <p class="text-primary m-0 font-weight-bold">Submit Report</p>
                     </div>
                     <div class="card-body">
-                        <form method="post">
+                        <form method="post" action="/updatereportsave">
                             @csrf
                             <div class="form-group"><select class="form-control" name="HarvestType" required="">
                                     <optgroup label="Select Harvest Type">
-                                        <option value="Vegetables">Vegetables</option>
-                                        <option value="Fruits">Fruits</option>
-                                        <option value="Nuts">Nuts</option>
-                                        <option value="Grain">Grain</option>
+                                        <option @if($Report->HarvestType == 'Vegetables') selected @endif value="Vegetables">Vegetables</option>
+                                        <option @if($Report->HarvestType == 'Fruits') selected @endif value="Fruits">Fruits</option>
+                                        <option @if($Report->HarvestType == 'Nuts') selected @endif value="Nuts">Nuts</option>
+                                        <option @if($Report->HarvestType == 'Grain') selected @endif value="Grain">Grain</option>
                                     </optgroup>
                                 </select></div>
-                            <div class="form-group"><input class="form-control" min="1" step="any" type="number" name="Amount" required="" inputmode="numeric" placeholder="Total Amount (kg)"></div>
-                            <div class="form-group"><input class="form-control" min="0" step="any" type="number" name="WAmount" required="" inputmode="numeric" placeholder="Wastage Amount (kg)"></div>
+                            <div class="form-group"><input class="form-control" value="{{$Report->Amount}}" min="1" step="any" type="number" name="Amount" required="" inputmode="numeric" placeholder="Total Amount (kg)"></div>
+                            <div class="form-group"><input class="form-control" value="{{$Report->WAmount}}" min="0" step="any" type="number" name="WAmount" required="" inputmode="numeric" placeholder="Wastage Amount (kg)"></div>
                             <div class="form-group"><label>Location</label>
                                 <div style="height: 256px; width: 100%" id="map"></div>
                             </div>
@@ -110,7 +110,11 @@
         </div>
     </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
 </div>
-@include('Common.Footer')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
+<script src="../../assets/js/script.min.js"></script>
 <script>
     // Get element references
     //let confirmBtn = document.getElementById('confirmPosition');

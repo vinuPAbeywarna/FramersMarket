@@ -89,7 +89,7 @@ class ReportController extends Controller
 
     public function UpdateReport(Request $request, $id)
     {
-        $Report =  ReportModel::firstWhere('id','=',$id)->get();
+        $Report =  ReportModel::where('id','=',$id)->first();
         return view('UpdateReport')->with(['Report'=>$Report]);
 
     }
