@@ -76,7 +76,7 @@
 
                                         <option @if($Report->District=='Kaluthara') selected @endif value="Kaluthara">Kaluthara</option>
                                         <option @if($Report->District=='Kandy') selected @endif value="Kandy">Kandy</option>
-                                        <option @if($Report->District=='Jaffna') selected @endif value="Kegalle">Kegalle</option>
+                                        <option @if($Report->District=='Kegalle') selected @endif value="Kegalle">Kegalle</option>
                                         <option @if($Report->District=='Jaffna') selected @endif value="Kilinochchi">Kilinochchi</option>
                                         <option @if($Report->District=='Jaffna') selected @endif value="kurunegala">kurunegala</option>
 
