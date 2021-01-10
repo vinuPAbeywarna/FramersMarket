@@ -87,7 +87,7 @@
                                         <option @if($Report->District=='Nuwara Eliya') selected @endif value="Nuwara Eliya">Nuwara Eliya</option>
 
                                         <option @if($Report->District=='Nuwara Eliya') selected @endif value="Putthalama">Putthalama</option>
-                                        <option value="Rathnapura">Rathnapura</option>
+                                        <option  @if($Report->District=='Nuwara Eliya') selected @endif value="Rathnapura">Rathnapura</option>
                                         <option value="Trincomalee">Trincomalee</option>
                                         <option value="Vavniya">Vavniya</option>
                                         <option value="Matale">Matale</option>
