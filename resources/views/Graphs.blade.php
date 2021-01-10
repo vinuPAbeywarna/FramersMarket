@@ -102,7 +102,7 @@
             labels: ['Hambanthota','Jaffna','Colombo','Ampara','Anuradhapura'],
             datasets: [{
                 label: '# of Reports',
-                data: [{{$Location[0]}},{{$Location[1]}},{{$Location[1]}},{{$Location[1]}},{{$Location[1]}}],
+                data: [{{$Location[0]}},{{$Location[1]}},{{$Location[2]}},{{$Location[3]}}],
                 backgroundColor: [
                     'rgba(54, 162, 235, 1)',
                     'rgba(50, 168, 82, 1)',

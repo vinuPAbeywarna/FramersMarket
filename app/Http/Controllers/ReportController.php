@@ -64,10 +64,10 @@ class ReportController extends Controller
 
         $Location = [
 
-            ReportModel::findwhere('District', '=', 'Hambanthota')->count(),
-            ReportModel::findwhere('District', '=', 'Jaffna')->count(),
-            ReportModel::findwhere('District', '=', 'Colombo')->count(),
-            ReportModel::findwhere('District', '=', 'Galle')->count(),
+            ReportModel::where('District', '=', 'Hambanthota')->count(),
+            ReportModel::where('District', '=', 'Jaffna')->count(),
+            ReportModel::where('District', '=', 'Colombo')->count(),
+            ReportModel::where('District', '=', 'Galle')->count(),
 
 
         ];
