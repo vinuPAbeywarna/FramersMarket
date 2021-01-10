@@ -39,6 +39,14 @@
                     </div>
                 </div>
 
+                <div class="col">
+                    <h3 class="text-dark mb-1">Types of Harvest</h3>
+                    <div class="chart-area">
+                        <canvas id="TransactionChart" width="512px" height="256px"></canvas>
+                    </div>
+                </div>
+
+
 
         </div>
     </div>
@@ -50,6 +58,7 @@
     let ctx = document.getElementById('harvestChart');
     let ctx2 = document.getElementById('wasteChart');
     let ctx3 = document.getElementById('LocationsChart');
+    let ctx4 = document.getElementById('TransactionChart');
     let myChart = new Chart(ctx, {
         type: 'pie',
         data: {
