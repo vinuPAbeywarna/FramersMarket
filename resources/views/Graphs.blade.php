@@ -35,7 +35,7 @@
                 <div class="col">
                     <h3 class="text-dark mb-1">Types of Harvest</h3>
                     <div class="chart-area">
-                        <canvas id="harvestChart" width="512px" height="256px"></canvas>
+                        <canvas id="LocationsChart" width="512px" height="256px"></canvas>
                     </div>
                 </div>
 
