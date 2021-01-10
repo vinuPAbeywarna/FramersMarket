@@ -116,13 +116,13 @@
         },
     });
 
-    let myChart4 = new Chart(ctx4, {
+   /* let myChart4 = new Chart(ctx4, {
         type: 'pie',
         data: {
             labels: ['Successful Transactions','Unsuccessful Transactions'],
             datasets: [{
                 label: '# of Reports',
-                data: [{{$Location[0]}},{{$Location[1]}},{{$Location[1]}},{{$Location[1]}},{{$Location[1]}}],
+                data: [{{$SaleStatus[0]}},{{$SaleStatus[1]}}],
                 backgroundColor: [
                     'rgba(54, 162, 235, 1)',
                     'rgba(50, 168, 82, 1)',
@@ -135,7 +135,7 @@
             }]
         },
     });
-
+*/
 
 
 
