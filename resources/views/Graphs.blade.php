@@ -31,6 +31,15 @@
                         <canvas id="wasteChart" width="512px" height="256px"></canvas>
                     </div>
                 </div>
+
+                <div class="col">
+                    <h3 class="text-dark mb-1">Types of Harvest</h3>
+                    <div class="chart-area">
+                        <canvas id="harvestChart" width="512px" height="256px"></canvas>
+                    </div>
+                </div>
+
+
         </div>
     </div>
     <a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
