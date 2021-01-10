@@ -80,8 +80,8 @@
                                         <option @if($Report->District=='Kilinochchi') selected @endif value="Kilinochchi">Kilinochchi</option>
                                         <option @if($Report->District=='kurunegala') selected @endif value="kurunegala">kurunegala</option>
 
-                                        <option @if($Report->District=='kurunegala') selected @endif value="Matara">Matara</option>
-                                        <option @if($Report->District=='kurunegala') selected @endif value="Matale">Matale</option>
+                                        <option @if($Report->District=='Matara') selected @endif value="Matara">Matara</option>
+                                        <option @if($Report->District=='Matale') selected @endif value="Matale">Matale</option>
                                         <option @if($Report->District=='kurunegala') selected @endif value="Monaragala">Monaragala</option>
                                         <option @if($Report->District=='kurunegala') selected @endif value="Mulathiv">Mulathiv</option>
                                         <option @if($Report->District=='kurunegala') selected @endif value="Nuwara Eliya">Nuwara Eliya</option>
