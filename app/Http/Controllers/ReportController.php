@@ -89,19 +89,21 @@ class ReportController extends Controller
             ReportModel::where('District', '=', 'Trincomalee ')->count(),
             ReportModel::where('District', '=', 'Vavniya')->count(),
 
-
-
-
-
-
-
         ];
+
+        $SaleStatus = [
+            ReportModel::where('S', '=', 'Vegetables')->count(),
+        ];
+
+
+
+
 
 
 
         if (Session::get('Logged')) {
             //return response($HarvestGraph,200);
-            return view('Graphs')->with(['HarvestGraph' => $HarvestGraph, 'Wastage' => $Wastage, 'Location'=>$Location]);
+            return view('Graphs')->with(['HarvestGraph' => $HarvestGraph, 'Wastage' => $Wastage, 'Location'=>$Location, 'Transaction' =>$SaleStatus]);
         } else {
             return redirect()->route('SignIn');
         }
