@@ -144,7 +144,7 @@
     let myChart4 = new Chart(ctx4, {
         type: 'pie',
         data: {
-            labels: ['Successful Transactions','Unsuccessful Transactions'],
+            labels: ['Bought','Ignored'],
             datasets: [{
                 label: '# of Reports',
                 data: [{{$SaleStatus[0]}},{{$SaleStatus[1]}}],

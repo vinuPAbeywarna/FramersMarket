@@ -98,13 +98,9 @@ class ReportController extends Controller
 
 
 
-
-
-
-
         if (Session::get('Logged')) {
             //return response($HarvestGraph,200);
-            return view('Graphs')->with(['HarvestGraph' => $HarvestGraph, 'Wastage' => $Wastage, 'Location'=>$Location, 'Transaction' =>$SaleStatus]);
+            return view('Graphs')->with(['HarvestGraph' => $HarvestGraph, 'Wastage' => $Wastage, 'Location'=>$Location, 'SaleStatus' =>$SaleStatus]);
         } else {
             return redirect()->route('SignIn');
         }
