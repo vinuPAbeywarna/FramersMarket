@@ -99,7 +99,7 @@
     let myChart3 = new Chart(ctx3, {
         type: 'pie',
         data: {
-            labels: ['Hambanthota','Jaffna','Colombo','Ampara','Anuradhapura'],
+            labels: ['Hambanthota','Jaffna','Colombo','Ampara','Anuradhapura','Badulla',],
             datasets: [{
                 label: '# of Reports',
                 data: [{{$Location[0]}},{{$Location[1]}},{{$Location[2]}},{{$Location[3]}}],
