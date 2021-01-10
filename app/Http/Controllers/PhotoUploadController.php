@@ -24,4 +24,20 @@ class PhotoUploadController extends Controller
         return response('Error');
 
     }
+
+    public function HarvestUpload(Request  $request){
+
+        if ($request->hasFile('Image')){
+
+            $extension = $request->file('Image')->getClientOriginalExtension();
+            $fileNameToStore = Session::get('FarmerNIC').'.'.$extension;
+            $path = $request->file('Image')->storeAs('public',$fileNameToStore);
+            UserModel::where('NIC','=',Session::get('FarmerNIC'))->update(['Image'=>$fileNameToStore]);
+
+
+            return redirect()->back();
+        }
+        return response('Error');
+
+    }
 }

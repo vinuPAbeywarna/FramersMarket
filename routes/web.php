@@ -63,6 +63,11 @@ Route::post('/addnewuser', [AuthController::class, 'NewUser'])->name('newuser');
 
 //Photo Upload
 Route::post('/photoUpload', [PhotoUploadController::class, 'Upload'])->name('PhotoUpload');
+
+//Harvest Image Upload
+Route::post('/HarvestImageUpload', [PhotoUploadController::class, 'HarvestUpload'])->name('HarvestImageUpload');
+
+
 //User Update
 Route::post('/updateUser', [AuthController::class, 'UpdateUser'])->name('UpdateUser');
 
