@@ -33,14 +33,14 @@
                 </div>
 
                 <div class="col">
-                    <h3 class="text-dark mb-1">Types of Harvest</h3>
+                    <h3 class="text-dark mb-1"> Locations Most Farmers Reside</h3>
                     <div class="chart-area">
                         <canvas id="LocationsChart" width="512px" height="256px"></canvas>
                     </div>
                 </div>
 
                 <div class="col">
-                    <h3 class="text-dark mb-1">Types of Harvest</h3>
+                    <h3 class="text-dark mb-1">Successful Transactions</h3>
                     <div class="chart-area">
                         <canvas id="TransactionChart" width="512px" height="256px"></canvas>
                     </div>
@@ -116,26 +116,6 @@
         },
     });
 
-   /* let myChart4 = new Chart(ctx4, {
-        type: 'pie',
-        data: {
-            labels: ['Successful Transactions','Unsuccessful Transactions'],
-            datasets: [{
-                label: '# of Reports',
-                data: [{{$SaleStatus[0]}},{{$SaleStatus[1]}}],
-                backgroundColor: [
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(50, 168, 82, 1)',
-                    'rgba(222, 140, 255, 1)',
-                    'rgba(251, 70, 73, 1)',
-
-                ],
-                borderColor: 'rgba(255, 255, 255, 1)',
-                borderWidth: 2
-            }]
-        },
-    });
-*/
 
 
 
