@@ -92,7 +92,8 @@ class ReportController extends Controller
         ];
 
         $SaleStatus = [
-            ReportModel::where('S', '=', 'Vegetables')->count(),
+            ReportModel::where('SaleStatus', '=', 'Bought')->count(),
+            ReportModel::where('SaleStatus', '=', 'Ignored')->count(),
         ];
 
 
