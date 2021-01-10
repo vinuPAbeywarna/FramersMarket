@@ -62,7 +62,7 @@
                             <div class="form-group">
                                 <select class="form-control" name="District" required="">
                                     <optgroup label="Select Your District">
-                                        <option value="Ampara">Ampara</option>
+                                        <option @if($Report->District=='Ampara') selected @endif value="Ampara">Ampara</option>
                                         <option value="Anuradhapura">Anuradhapura</option>
                                         <option value="Badulla">Badulla</option>
                                         <option value="Batticaloa">Batticaloa</option>
