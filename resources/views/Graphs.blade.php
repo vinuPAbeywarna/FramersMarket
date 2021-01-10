@@ -99,10 +99,10 @@
     let myChart3 = new Chart(ctx3, {
         type: 'pie',
         data: {
-            labels: ['Hambanthota','Jaffna','Colombo','Ampara','Anuradhapura','Badulla','Batticaloa','Mannar','Gampaha','Galle','Kaluthara','Kandy','Kegalle','Kilinochchi','kurunegala','Matara','Matale','Monaragala'],
+            labels: ['Hambanthota','Jaffna','Colombo','Ampara','Anuradhapura','Badulla','Batticaloa','Mannar','Gampaha','Galle','Kaluthara','Kandy','Kegalle','Kilinochchi','kurunegala','Matara','Matale','Monaragala','Mulathiv','Nuwara Eliya'],
             datasets: [{
                 label: '# of Reports',
-                data: [{{$Location[0]}},{{$Location[1]}},{{$Location[2]}},{{$Location[3]}},{{$Location[4]}},{{$Location[5]}},{{$Location[6]}},{{$Location[7]}},{{$Location[8]}},{{$Location[9]}},{{$Location[10]}},{{$Location[11]}},{{$Location[12]}},{{$Location[13]}},{{$Location[14]}},{{$Location[15]}},{{$Location[16]}},{{$Location[17]}}],
+                data: [{{$Location[0]}},{{$Location[1]}},{{$Location[2]}},{{$Location[3]}},{{$Location[4]}},{{$Location[5]}},{{$Location[6]}},{{$Location[7]}},{{$Location[8]}},{{$Location[9]}},{{$Location[10]}},{{$Location[11]}},{{$Location[12]}},{{$Location[13]}},{{$Location[14]}},{{$Location[15]}},{{$Location[16]}},{{$Location[17]}},{{$Location[18]}},{{$Location[19]}}],
                 backgroundColor: [
                     'rgba(54, 162, 235, 1)',
                     'rgba(50, 168, 82, 1)',
