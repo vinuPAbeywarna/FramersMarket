@@ -68,7 +68,7 @@
                                         <option @if($Report->District=='Batticaloa') selected @endif value="Batticaloa">Batticaloa</option>
                                         <option @if($Report->District=='Mannar') selected @endif value="Mannar">Batticaloa</option>
 
-                                        <option value="Colombo">Colombo</option>
+                                        <option @if($Report->District=='Mannar') selected @endif value="Colombo">Colombo</option>
                                         <option value="Galle">Galle</option>
                                         <option value="Gampaha">Gampaha</option>
                                         <option value="Hambanthota">Hambanthota</option>
