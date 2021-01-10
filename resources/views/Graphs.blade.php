@@ -99,10 +99,10 @@
     let myChart3 = new Chart(ctx3, {
         type: 'pie',
         data: {
-            labels: ['Hambanthota','Jaffna','Colombo','Ampara','Anuradhapura','Badulla','Batticaloa','Mannar','Gampaha','Galle','Kaluthara','Kandy','Kegalle','Kilinochchi','kurunegala','Matara','Matale','Monaragala','Mulathiv','Nuwara Eliya'],
+            labels: ['Hambanthota','Jaffna','Colombo','Ampara','Anuradhapura','Badulla','Batticaloa','Mannar','Gampaha','Galle','Kaluthara','Kandy','Kegalle','Kilinochchi','kurunegala','Matara','Matale','Monaragala','Mulathiv','Nuwara Eliya','Putthalama','Rathnapura','Trincomalee','Vavniya','Madakalapuwa'],
             datasets: [{
                 label: '# of Reports',
-                data: [{{$Location[0]}},{{$Location[1]}},{{$Location[2]}},{{$Location[3]}},{{$Location[4]}},{{$Location[5]}},{{$Location[6]}},{{$Location[7]}},{{$Location[8]}},{{$Location[9]}},{{$Location[10]}},{{$Location[11]}},{{$Location[12]}},{{$Location[13]}},{{$Location[14]}},{{$Location[15]}},{{$Location[16]}},{{$Location[17]}},{{$Location[18]}},{{$Location[19]}}],
+                data: [{{$Location[0]}},{{$Location[1]}},{{$Location[2]}},{{$Location[3]}},{{$Location[4]}},{{$Location[5]}},{{$Location[6]}},{{$Location[7]}},{{$Location[8]}},{{$Location[9]}},{{$Location[10]}},{{$Location[11]}},{{$Location[12]}},{{$Location[13]}},{{$Location[14]}},{{$Location[15]}},{{$Location[16]}},{{$Location[17]}},{{$Location[18]}},{{$Location[19]}},{{$Location[20]}},{{$Location[21]}},{{$Location[22]}},{{$Location[23]}},{{$Location[24]}}],
                 backgroundColor: [
                     'rgba(54, 162, 235, 1)',
                     'rgba(50, 168, 82, 1)',
@@ -121,6 +121,13 @@
                     'rgba(90, 255, 0, 0.82)',
                     'rgba(255, 255, 0, 0.82)',
                     'rgba(255, 70, 0, 0.7)',
+                    'rgba(35, 155, 252, 0.52)',
+                    'rgba(35, 231, 252, 1)',
+                    'rgba(35, 231, 252, 1)',
+                    'rgba(35, 231, 252, 1)',
+                    'rgba(35, 231, 252, 1)',
+                    'rgba(35, 231, 252, 1)',
+                    'rgba(35, 231, 252, 1)',
 
 
                 ],
