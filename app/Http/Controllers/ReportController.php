@@ -74,6 +74,8 @@ class ReportController extends Controller
             ReportModel::where('District', '=', 'Mannar')->count(),
             ReportModel::where('District', '=', 'Gampaha')->count(),
             ReportModel::where('District', '=', 'Ampara')->count(),
+            ReportModel::where('District', '=', 'Kaluthara')->count(),
+            ReportModel::where('District', '=', 'Kandy')->count(),
 
 
 
