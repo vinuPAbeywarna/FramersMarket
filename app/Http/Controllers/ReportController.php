@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\ReportModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\Storage;
 
 class ReportController extends Controller
 {
@@ -122,9 +121,6 @@ class ReportController extends Controller
 
     public function DeleteReport(Request $request)
     {
-        $photo = ReportModel::where('id','=',$request->get('id'))->first(['Image']);
-        Storage::delete('public/storage/'.$photo->Image);
-        return response($photo->Image);
         ReportModel::where('id','=',$request->get('id'))->delete();
         return redirect()->back();
     }
@@ -141,7 +137,18 @@ class ReportController extends Controller
     {
         ReportModel::where('id','=',$request->get('id'))->update([
             'HarvestType'=>$request->get('HarvestType'),
-            'Amount'=>$request->get('Amount')
+            'Amount'=>$request->get('Amount'),
+            'WAmount'=>$request->get('WAmount'),
+            'Lat'=>$request->get('Lat'),
+            'Lang'=>$request->get('Lang'),
+            'Description'=>$request->get('Description'),
+            'District'=>$request->get('District'),
         ]);
+
+        if ($request->hasFile('Image')){
+            $fileNameToStore = $request->file('ImageName');
+            $path = $request->file('Image')->storeAs('public',$fileNameToStore);
+        }
+        return redirect()->route('Profile');
     }
 }

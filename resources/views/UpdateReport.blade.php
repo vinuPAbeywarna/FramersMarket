@@ -96,8 +96,9 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="exampleForControlfile1">Select Product Image</label>
-                                <input type="file" name="PImage" class="form-control" id="exampleForControlfile1">
+                                <label>Image</label>
+                                <input hidden name="ImageName" value="{{$Report->Image}}">
+                                <input type="file" accept="image/*" class="form-control-file border border-primary" name="Image">
                             </div>
 
                             <div class="form-group"><textarea value="{{$Report->Description}}" class="form-control" name="Description" placeholder="Description" required=""></textarea></div>

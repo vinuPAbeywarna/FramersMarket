@@ -114,9 +114,9 @@
             "<p>District: {{$rp->District}}</p>" +
             "</div>" +
             @if($rp->Image != null)
-            '<img style="height:256px;width:256px" src="storage/{{$rp->Image}}" class="img-fluid img-thumbnail">' +
+                '<img style="height:256px;width:256px" src="storage/{{$rp->Image}}" class="img-fluid img-thumbnail">' +
             @endif
-            "" +
+                "" +
             "</div>";
         const iw_{{$rp->id}}  = new google.maps.InfoWindow({
             content: cs_{{$rp->id}},
@@ -124,8 +124,10 @@
         const m_{{$rp->id}}  = new google.maps.Marker({
             position: lt_{{$rp->id}},
             map,
-            @if($rp->SaleStatus != null)
+            @if($rp->SaleStatus =='Bought')
             icon: 'https://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|288800',
+            @elseif($rp->SaleStatus=='Ignored')
+            icon: 'https://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|020088',
             @endif
             title: "{{$rp->HarvestType}}"
         });
