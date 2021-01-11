@@ -35,13 +35,9 @@
                                 @php
                                 $User = \App\Models\UserModel::where('NIC','=', \Illuminate\Support\Facades\Session::get('NIC'))->first();
                                 @endphp
-                                @if($User->Photo !== null)
+
                                     <img class="rounded-circle mb-3 mt-4" src="/storage/{{$User->Photo}}" width="160"
                                          height="160">
-                                @else
-                                    <img class="rounded-circle mb-3 mt-4" src="/assets/img/dogs/defaultPP.png" width="160"
-                                         height="160">
-                                @endif
 
 
 

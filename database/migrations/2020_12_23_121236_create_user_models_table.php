@@ -21,7 +21,7 @@ class CreateUserModelsTable extends Migration
             $table->string('Address');
             $table->string('Phone')->unique();
             $table->string('Email')->nullable();
-            $table->string('Photo')->default('default.jpg');
+            $table->string('Photo')->default('default.png');
             $table->enum('UserType',['Farmer','KeelsStaff','DOA','Admin'])->default('Farmer');
             $table->timestamps();
         });

@@ -36,9 +36,9 @@
                             <p class="text-primary m-0 font-weight-bold">Submit Report</p>
                         </div>
                         <div class="card-body">
-                            <form method="post">
+                            <form enctype="multipart/form-data" method="post">
                                 @csrf
-                                <div class="form-group"><select class="form-control" name="HarvestType" required="">
+                                <div class="form-group"><select class="form-control border border-primary" name="HarvestType" required="">
                                         <optgroup label="Select Harvest Type">
                                             <option value="Vegetables">Vegetables</option>
                                             <option value="Fruits">Fruits</option>
@@ -46,21 +46,21 @@
                                             <option value="Grain">Grain</option>
                                         </optgroup>
                                     </select></div>
-                                <div class="form-group"><input class="form-control" min="1" step="any" type="number" name="Amount" required="" inputmode="numeric" placeholder="Total Amount (kg)"></div>
-                                <div class="form-group"><input class="form-control" min="0" step="any" type="number" name="WAmount" required="" inputmode="numeric" placeholder="Wastage Amount (kg)"></div>
+                                <div class="form-group"><input class="form-control border border-primary" min="1" step="any" type="number" name="Amount" required="" inputmode="numeric" placeholder="Total Amount (kg)"></div>
+                                <div class="form-group"><input class="form-control border border-primary" min="0" step="any" type="number" name="WAmount" required="" inputmode="numeric" placeholder="Wastage Amount (kg)"></div>
                                 <div class="form-group"><label>Location</label>
                                     <div style="height: 256px; width: 100%" id="map"></div>
                                 </div>
-                                <div class="form-group"><label>Selected Location</label>
+                                <div class="form-group"><label>Selected Location</label><br>
                                     <label>
-                                        Lat :<input name="Lat" type="number" step="any" class="form-control" id="maplat">
+                                        Lat :<input name="Lat" type="number" step="any" class="form-control border border-primary" id="maplat">
                                     </label>
                                     <label>
-                                        Lang : <input name="Lang" type="number" step="any" class="form-control" id="maplang">
+                                        Lang : <input name="Lang" type="number" step="any" class="form-control border border-primary" id="maplang">
                                     </label>
                                 </div>
                                 <div class="form-group">
-                                    <select class="form-control" name="District" required="">
+                                    <select class="form-control border border-primary" name="District" required="">
                                         <optgroup label="Select Your District">
                                             <option value="Ampara">Ampara</option>
                                             <option value="Anuradhapura">Anuradhapura</option>
@@ -96,19 +96,13 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <form enctype="multipart/form-data" method="POST" action="/HarvestImageUpload">
-                                        @csrf
-                                        <div class="row no-gutters">
-                                            <div class="col">
-                                                <input type="file" class="form-control-file" name="Photo">
-                                            </div>
-                                            <div class="col">
-                                                <input type="submit" class="btn btn-primary btn-sm" value="Change Photo">
-                                            </div>
-                                        </div>
+                                    <label>Image</label>
+                                    <input type="file" accept="image/*" class="form-control-file border border-primary" name="Image">
+                                </div>
 
 
-                                <div class="form-group"><textarea class="form-control" name="Description" placeholder="Description" required=""></textarea></div>
+
+                                <div class="form-group"><textarea class="form-control border border-primary" name="Description" placeholder="Description" required=""></textarea></div>
                                 <button class="btn btn-primary btn-block btn-lg" type="submit">Submit Report</button>
                             </form>
 

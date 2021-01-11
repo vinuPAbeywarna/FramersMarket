@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use App\Models\ReportModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Storage;
 
 class ReportController extends Controller
 {
     public function AddReport(Request $request)
     {
         try {
+
             $newReport = new ReportModel();
             $newReport->FarmerNIC = Session::get('NIC');
             $newReport->HarvestType = $request->input('HarvestType');
@@ -20,6 +22,18 @@ class ReportController extends Controller
             $newReport->Lang = $request->input('Lang');
             $newReport->District = $request->input('District');
             $newReport->Description = $request->input('Description');
+
+            if ($request->hasFile('Image')){
+                //return response(true);
+                $extension = $request->file('Image')->getClientOriginalExtension();
+                $fileNameToStore = 'Report_'.uniqid().'.'.$extension;
+                $path = $request->file('Image')->storeAs('public',$fileNameToStore);
+                $newReport->Image = $fileNameToStore;
+            }
+
+
+
+
             $newReport->save();
             return view('Submitreport');
         } catch (\Exception $e) {
@@ -108,6 +122,9 @@ class ReportController extends Controller
 
     public function DeleteReport(Request $request)
     {
+        $photo = ReportModel::where('id','=',$request->get('id'))->first(['Image']);
+        Storage::delete('public/storage/'.$photo->Image);
+        return response($photo->Image);
         ReportModel::where('id','=',$request->get('id'))->delete();
         return redirect()->back();
     }

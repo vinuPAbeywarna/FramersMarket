@@ -113,6 +113,10 @@
 
             "<p>District: {{$rp->District}}</p>" +
             "</div>" +
+            @if($rp->Image != null)
+            '<img style="height:256px;width:256px" src="storage/{{$rp->Image}}" class="img-fluid img-thumbnail">' +
+            @endif
+            "" +
             "</div>";
         const iw_{{$rp->id}}  = new google.maps.InfoWindow({
             content: cs_{{$rp->id}},
