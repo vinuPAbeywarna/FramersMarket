@@ -96,9 +96,17 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="exampleForControlfile1">Select Product Image</label>
-                                    <input type="file" class="form-control" id="exampleForControlfile1">
-                                </div>
+                                    <form enctype="multipart/form-data" method="POST" action="/HarvestImageUpload">
+                                        @csrf
+                                        <div class="row no-gutters">
+                                            <div class="col">
+                                                <input type="file" class="form-control-file" name="Photo">
+                                            </div>
+                                            <div class="col">
+                                                <input type="submit" class="btn btn-primary btn-sm" value="Change Photo">
+                                            </div>
+                                        </div>
+
 
                                 <div class="form-group"><textarea class="form-control" name="Description" placeholder="Description" required=""></textarea></div>
                                 <button class="btn btn-primary btn-block btn-lg" type="submit">Submit Report</button>

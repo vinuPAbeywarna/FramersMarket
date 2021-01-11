@@ -32,7 +32,7 @@ class PhotoUploadController extends Controller
             $extension = $request->file('Image')->getClientOriginalExtension();
             $fileNameToStore = Session::get('FarmerNIC').'.'.$extension;
             $path = $request->file('Image')->storeAs('public',$fileNameToStore);
-            UserModel::where('NIC','=',Session::get('FarmerNIC'))->update(['Image'=>$fileNameToStore]);
+            UserModel::where('FarmerNIC','=',Session::get('FarmerNIC'))->update(['Image'=>$fileNameToStore]);
 
 
             return redirect()->back();
