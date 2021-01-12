@@ -69,7 +69,6 @@ Route::post('/HarvestImageUpload', [PhotoUploadController::class, 'HarvestUpload
 
 
 //User Update
-
 Route::post('/updateUser', [AuthController::class, 'UpdateUser'])->name('UpdateUser');
 
 //Delete Reports
