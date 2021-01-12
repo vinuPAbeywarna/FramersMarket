@@ -2,7 +2,10 @@
 create the .env file then.
 1. composer install
 2. php artisan migrate
+3. php artisan db:seed
 
-## License
+## Admin Logins
+NIC = 1234
+password = admin
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
