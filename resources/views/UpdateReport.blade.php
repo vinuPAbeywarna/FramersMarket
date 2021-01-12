@@ -90,7 +90,7 @@
                                         <option @if($Report->District=='Rathnapura ') selected @endif value="Rathnapura">Rathnapura</option>
                                         <option @if($Report->District=='Trincomalee ') selected @endif value="Trincomalee">Trincomalee</option>
                                         <option @if($Report->District=='Vavniya ') selected @endif value="Vavniya">Vavniya</option>
-                                        <option @if($Report->District=='Matale ') selected @endif value="Matale">Matale</option>
+                                        <option @if($Report->District=='Matale ') selected @endif value="Matale">Mathale</option>
                                     </optgroup>
                                 </select>
                             </div>
