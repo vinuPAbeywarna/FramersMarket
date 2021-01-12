@@ -26,7 +26,7 @@
                                         @if($error)
                                         <div role="alert" class="alert alert-danger"><span><strong>Invalid NIC/Password. Please Retry</strong></span></div>
                                         @endif
-                                        <h4 class="text-dark mb-4">Welcome Back!</h4>
+                                        <h4 class="text-dark mb-4">WELCOME TO FARMERSMARKET!</h4>
                                     </div>
                                     <form class="user" method="post">
                                         @csrf
