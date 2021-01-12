@@ -44,6 +44,7 @@
                                 <div class="mb-3">
                                     <form enctype="multipart/form-data" method="POST" action="/photoUpload">
                                         @csrf
+                                        
                                         <div class="row no-gutters">
                                             <div class="col">
                                                 <input type="file" class="form-control-file" name="Photo">
