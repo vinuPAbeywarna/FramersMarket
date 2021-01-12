@@ -8,7 +8,7 @@
                     <div class="col-lg-7">
                         <div class="p-5">
                             <div class="text-center">
-                                <h4 class="text-dark mb-4">Create an Account!</h4>
+                                <h4 class="text-dark mb-4">Create an Account</h4>
                             </div>
                             <form class="user" method="post">
                                 @csrf
