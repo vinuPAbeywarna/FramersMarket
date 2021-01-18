@@ -135,14 +135,14 @@ class ReportController extends Controller
 
     public function UpdateReportSave(Request $request)
     {
-        ReportModel::where('id','=',$request->get('id'))->update([
-            'HarvestType'=>$request->get('HarvestType'),
-            'Amount'=>$request->get('Amount'),
-            'WAmount'=>$request->get('WAmount'),
-            'Lat'=>$request->get('Lat'),
-            'Lang'=>$request->get('Lang'),
-            'Description'=>$request->get('Description'),
-            'District'=>$request->get('District'),
+        ReportModel::where('id','=',$request->input('id'))->update([
+            'HarvestType'=>$request->input('HarvestType'),
+            'Amount'=>$request->input('Amount'),
+            'WAmount'=>$request->input('WAmount'),
+            'Lat'=>$request->input('Lat'),
+            'Lang'=>$request->input('Lang'),
+            'Description'=>$request->input('Description'),
+            'District'=>$request->input('District'),
         ]);
 
         if ($request->hasFile('Image')){

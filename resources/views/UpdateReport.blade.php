@@ -38,7 +38,7 @@
                     <div class="card-body">
                         <form method="post" action="/updatereportsave">
                             @csrf
-                            {{ method_field('PUT') }}
+                            <input hidden name="id" value="{{$Report->id}}" >
                             <div class="form-group"><select class="form-control" name="HarvestType" required="">
                                     <optgroup label="Select Harvest Type">
                                         <option @if($Report->HarvestType == 'Vegetables') selected @endif value="Vegetables">Vegetables</option>
@@ -104,7 +104,7 @@
                                 <input type="file" accept="image/*" class="form-control-file border border-primary" name="Image">
                             </div>
 
-                            <div class="form-group"><textarea value="{{$Report->Description}}" class="form-control" name="Description" placeholder="Description" required=""></textarea></div>
+                            <div class="form-group"><textarea class="form-control" name="Description" placeholder="Description" required="">{{$Report->Description}}</textarea></div>
                             <button class="btn btn-primary btn-block btn-lg" type="submit">Save Report</button>
                         </form>
 

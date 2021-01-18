@@ -76,7 +76,7 @@ Route::post('/deletereport',[ReportController::class,'DeleteReport'])->name('Del
 
 //Edit Report
 Route::get('/updatereport/{id}', [ReportController::class,'UpdateReport'])->name('UpdateReport');
-
+Route::post('/updatereportsave', [ReportController::class,'UpdateReportSave']);
 
 Route::post('/submitreport', [ReportController::class, 'AddReport']);
 Route::post('/', [ReportController::class, 'setStatus']);
