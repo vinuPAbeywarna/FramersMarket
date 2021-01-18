@@ -38,6 +38,7 @@
                     <div class="card-body">
                         <form method="post" action="/updatereportsave">
                             @csrf
+                            {{ method_field('PUT') }}
                             <div class="form-group"><select class="form-control" name="HarvestType" required="">
                                     <optgroup label="Select Harvest Type">
                                         <option @if($Report->HarvestType == 'Vegetables') selected @endif value="Vegetables">Vegetables</option>
@@ -46,6 +47,7 @@
                                         <option @if($Report->HarvestType == 'Grain') selected @endif value="Grain">Grain</option>
                                     </optgroup>
                                 </select></div>
+
                             <div class="form-group"><input class="form-control" value="{{$Report->Amount}}" min="1" step="any" type="number" name="Amount" required="" inputmode="numeric" placeholder="Total Amount (kg)"></div>
                             <div class="form-group"><input class="form-control" value="{{$Report->WAmount}}" min="0" step="any" type="number" name="WAmount" required="" inputmode="numeric" placeholder="Wastage Amount (kg)"></div>
                             <div class="form-group"><label>Location</label>
@@ -59,6 +61,7 @@
                                     Lang : <input value="{{$Report->Lang}}" name="Lang" type="number" step="any" class="form-control" id="maplang">
                                 </label>
                             </div>
+
                             <div class="form-group">
                                 <select class="form-control" name="District" required="">
                                     <optgroup label="Select Your District">
